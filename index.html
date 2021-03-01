@@ -56,8 +56,9 @@ let nextbutton = document.getElementById("nextbutton");
 
 var queue = new Queue(); 
 function saveData(dataString){
+queue.enqueue(dataString);
 if(queue.getLength()==0){
-header.innerText ="Choose first feeling";
+	header.innerText ="Choose first feeling";
 	queue.enqueue(dataString);
 }
 else if(queue.getLength()==1){
