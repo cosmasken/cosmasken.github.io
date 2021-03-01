@@ -61,8 +61,7 @@ function getData() {
           
 
 <map name="image-map">
-    <area id="head"target="_parent" alt="index" title="head" href="" coords="1384,478,474" shape="circle"
-    onmouseover="this.style.backgroundColor='#00FF00';" onmouseout="this.style.backgroundColor='transparent';">
+    <area id="head"target="_parent" alt="index" title="head" href="" coords="1384,478,474" shape="circle">
     <area id="rightleg" target="" alt="" title="rightleg" href="" coords="909,3444,1163,5022" shape="rect">
     <area id="leftleg" target="" alt="" title="leftleg" href="" coords="1829,3506,1625,4977" shape="rect">
     <area id="righthand" target="" alt="" title="righthand" href="" coords="311,2659,325" shape="circle">
@@ -77,19 +76,11 @@ function getData() {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/imageMapResizer.min.js"></script>
-<script type="text/javascript" src="js/jquery.imagemapster.min.js"><script>
     
     <script>
     
 $(document).ready(function(e) {
 $('map').imageMapResize();
-$('img[usemap]').mapster();
-$('img[usemap]').mapster({
-  fillColor: 'ff0000',
-  stroke: true,
-  singleSelect: true
-});
-$('area').mapster('select');
 
 
 	
