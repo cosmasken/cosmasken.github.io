@@ -65,10 +65,11 @@ if(queue.getLength()==1){
 }else if(queue.getLength()==3){
  queue.dequeue();
 	queue.enqueue(dataString);
-	header.innerText ="Click Next to continue"
+	header.innerText ="Click Next to continue";
 nextbutton.style.display = "block";
 }
 else{
+header.innerText ="Choose first feeling";
 	queue.enqueue(dataString);
 }
 clickedWhat.innerText =queue.peek();
