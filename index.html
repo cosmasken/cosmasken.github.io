@@ -56,12 +56,7 @@ let nextbutton = document.getElementById("nextbutton");
 
 var queue = new Queue(); 
 function saveData(dataString){
-queue.enqueue(dataString);
-if(queue.getLength()==0){
-	header.innerText ="First feeling";
-	queue.enqueue(dataString);
-}
-else if(queue.getLength()==1){
+ if(queue.getLength()==1){
 	queue.enqueue(dataString);
 	header.innerText ="Click Two More";
 } else if(queue.getLength()==2){
