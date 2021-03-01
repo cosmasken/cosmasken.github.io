@@ -56,12 +56,13 @@ let nextbutton = document.getElementById("nextbutton");
 var queue = new Queue(); 
 function saveData(dataString){
 if(queue.getLength()==3){
+ nextbutton.style.display = "block";
   queue.dequeue();
 	queue.enqueue(dataString);
 
-nextbutton.style.display = "block";
 
-}else {
+
+}else{
 	queue.enqueue(dataString);
 }
 clickedWhat.innerText =queue.peek();
