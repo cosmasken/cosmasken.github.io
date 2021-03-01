@@ -61,13 +61,13 @@ function getData() {
           
 
 <map name="image-map">
-    <area target="_parent" alt="index" title="head" href="" coords="1384,478,474" shape="circle"
+    <area id="head"target="_parent" alt="index" title="head" href="" coords="1384,478,474" shape="circle"
     onmouseover="this.style.backgroundColor='#00FF00';" onmouseout="this.style.backgroundColor='transparent';">
-    <area target="" alt="" title="rightleg" href="" coords="909,3444,1163,5022" shape="rect">
-    <area target="" alt="" title="leftleg" href="" coords="1829,3506,1625,4977" shape="rect">
-    <area target="" alt="" title="righthand" href="" coords="311,2659,325" shape="circle">
-    <area target="" alt="" title="lefthand" href="" coords="2455,2568,355" shape="circle">
-    <area target="" alt="" title="torso" href="" coords="1356,2099,586" shape="circle">
+    <area id="rightleg" target="" alt="" title="rightleg" href="" coords="909,3444,1163,5022" shape="rect">
+    <area id="leftleg" target="" alt="" title="leftleg" href="" coords="1829,3506,1625,4977" shape="rect">
+    <area id="righthand" target="" alt="" title="righthand" href="" coords="311,2659,325" shape="circle">
+    <area id="lefthand" target="" alt="" title="lefthand" href="" coords="2455,2568,355" shape="circle">
+    <area id="torso" target="" alt="" title="torso" href="" coords="1356,2099,586" shape="circle">
 </map>
           </div>
                 
@@ -81,7 +81,9 @@ function getData() {
     
 $(document).ready(function(e) {
 $('map').imageMapResize();
-	
+	$("#head").mouseover(function(){
+	$(this).style.backgroundColor='#00FF00';
+	}
 	$('area').on('click', function() {
 		alert($(this).attr('alt') + ' clicked');
 	});
