@@ -76,18 +76,21 @@ function getData() {
             </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://www.jsdelivr.com/package/npm/imagemapster"></script>
+    <script type="text/javascript" src="scripts/jquery.imagemapster.js"><script>
     <script type="text/javascript" src="js/imageMapResizer.min.js"></script>
     <script>
     
 $(document).ready(function(e) {
-$('img[usemap]').mapster();
+$('map').imageMapResize();
+//$('img[usemap]').mapster();
 $('img[usemap]').mapster({
   fillColor: 'ff0000',
   stroke: true,
   singleSelect: true
 });
-$('map').imageMapResize();
+$('area').mapster('select');
+
+
 	
 
 });
