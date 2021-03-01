@@ -48,7 +48,9 @@ function getData() {
     <body>
     <h1 id ="header"style="margin-top: -30px;"><b>Click each feeling snd select where you feel it </b></h1> 
         <div class="main" align="center">
-
+<div id="hed" style="font-family: 'Reggae one', cursive; color: burlywood; font-size: 18px;">
+               Choose three feelings: <span id="spanhed" style="color: crimson;"></span>
+          </div>
 <div class="toolbar">  
           <ul >
            <img id="firstimage" src="img/Angesehen.png">
@@ -56,6 +58,7 @@ function getData() {
              <img id="thirdimage"src="img/Angesehen.png">
           </ul>
           </div>
+          
           <div>
             <img id="fullbody"src="img/fullbody.png"usemap="#image-map">
           
@@ -81,9 +84,9 @@ function getData() {
     
 $(document).ready(function(e) {
 $('map').imageMapResize();	
-/*$( "#firstimage" ).click(function() {
-$(#showfeelings).html("Right leg is feeling bad");
-});*/
+$( "#firstimage" ).click(function() {
+$("#hed").text("Your text here");
+});
 });
 
 </script>

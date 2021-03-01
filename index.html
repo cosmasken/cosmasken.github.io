@@ -42,8 +42,8 @@
           <div class="clk" style="font-family: 'Reggae one', cursive; color: burlywood; font-size: 18px;">
                You chose: <span id="clickedWhat3" style="color: crimson;"></span>
           </div>
-         <a id="nextbutton" href="feelings.html">Next &raquo;</a>
-
+         <a id="nextbutton">Next &raquo;</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
   myStorage = window.sessionStorage;
 let wheelNumber = 0;
@@ -225,5 +225,16 @@ let theWheel = new Winwheel({
 
 
     </script>
+    
+
+    <script>
+  $(document).ready(function(e) {
+$( "#nextbutton" ).click(function() {
+alert(queue.peek()+","+queue.secondItem()+","+queue.third());
+});
+});  
+
+
+</script>
     </body>
 </html>

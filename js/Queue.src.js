@@ -26,6 +26,12 @@ function Queue(){
   this.getLength = function(){
     return (queue.length - offset);
   }
+   this.toString = function(){
+   var item = queue[offset];
+   var item1 = queue[second];
+   var item2 = queue[third];
+    return item+item1+item2;
+  }
 
   // Returns true if the queue is empty, and false otherwise.
   this.isEmpty = function(){
