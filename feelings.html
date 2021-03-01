@@ -46,14 +46,14 @@ function getData() {
          </style>
     </head>
     <body>
-    <h1 style="margin-top: -30px;"><b>Click each feeling snd select where you feel it </b></h1>  
+    <h1 id ="header"style="margin-top: -30px;"><b>Click each feeling snd select where you feel it </b></h1> 
         <div class="main" align="center">
 
 <div class="toolbar">  
           <ul >
-           <img src="img/Angesehen.png"onclick="getData()">
-            <img src="img/Angesehen.png"onclick="getData()">
-             <img src="img/Angesehen.png"onclick="getData()">
+           <img id="firstimage" src="img/Angesehen.png">
+            <img id="secondimage"src="img/Angesehen.png">
+             <img id="thirdimage"src="img/Angesehen.png">
           </ul>
           </div>
           <div>
@@ -81,8 +81,9 @@ function getData() {
     
 $(document).ready(function(e) {
 $('map').imageMapResize();	
-
-
+/*$( "#firstimage" ).click(function() {
+$(#showfeelings).html("Right leg is feeling bad");
+});*/
 });
 
 </script>
