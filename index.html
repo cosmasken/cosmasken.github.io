@@ -42,12 +42,13 @@
           <div class="clk" style="font-family: 'Reggae one', cursive; color: burlywood; font-size: 18px;">
                You chose: <span id="clickedWhat3" style="color: crimson;"></span>
           </div>
-         <a id = "nextbutton"  href="feelings.html">Next &raquo;</a>
+         <a  href="feelings.html">Next &raquo;</a>
 
     <script>
   myStorage = window.sessionStorage;
 let wheelNumber = 0;
 let canvas = document.getElementById("canvas");
+let header = document.getElementById("header");
 let clickedWhat = document.getElementById("clickedWhat");
 let clickedWhat2 = document.getElementById("clickedWhat2");
 let clickedWhat3 = document.getElementById("clickedWhat3");
@@ -55,14 +56,19 @@ let nextbutton = document.getElementById("nextbutton");
 
 var queue = new Queue(); 
 function saveData(dataString){
-if(queue.getLength()==3){
- 
-  queue.dequeue();
+if(queue.getLength()==1){
 	queue.enqueue(dataString);
+	clickedWhat.innerText ="Click Two More";
+} else if(queue.getLength()==2){
+	queue.enqueue(dataString);
+	clickedWhat.innerText ="Click One More";
+}else if(queue.getLength()==3){
+ queue.dequeue();
+	queue.enqueue(dataString);
+	clickedWhat.innerText ="Click Next to continue"
 nextbutton.style.display = "block";
-
-
-}else{
+}
+else{
 	queue.enqueue(dataString);
 }
 clickedWhat.innerText =queue.peek();
