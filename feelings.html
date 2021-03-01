@@ -81,11 +81,9 @@ function getData() {
     
 $(document).ready(function(e) {
 $('map').imageMapResize();
-	$("#head").mouseover(function(){
-	$(this).style.backgroundColor='#00FF00';
-	}
+	
 	$('area').on('click', function() {
-		alert($(this).attr('alt') + ' clicked');
+		$(this).style.backgroundColor='#00FF00';
 	});
 });
 
