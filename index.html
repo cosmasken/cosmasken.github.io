@@ -61,12 +61,12 @@ function saveData(dataString){
 	header.innerText ="Click One More";
 } else if(queue.getLength()==2){
 	queue.enqueue(dataString);
+	nextbutton.style.display = "block";
 	header.innerText ="Click Next to continue";
 }else if(queue.getLength()>=3){
  queue.dequeue();
 	queue.enqueue(dataString);
-	header.innerText ="Click Next to continue";
-nextbutton.style.display = "block";
+
 }else {
 	queue.enqueue(dataString);
 	
