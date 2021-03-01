@@ -56,7 +56,11 @@ let nextbutton = document.getElementById("nextbutton");
 
 var queue = new Queue(); 
 function saveData(dataString){
-if(queue.getLength()==1){
+if(queue.getLength()==0){
+header.innerText ="Choose first feeling";
+	queue.enqueue(dataString);
+}
+else if(queue.getLength()==1){
 	queue.enqueue(dataString);
 	header.innerText ="Click Two More";
 } else if(queue.getLength()==2){
@@ -68,10 +72,7 @@ if(queue.getLength()==1){
 	header.innerText ="Click Next to continue";
 nextbutton.style.display = "block";
 }
-else{
-header.innerText ="Choose first feeling";
-	queue.enqueue(dataString);
-}
+
 clickedWhat.innerText =queue.peek();
 clickedWhat2.innerText =queue.secondItem();
 clickedWhat3.innerText =queue.third();
