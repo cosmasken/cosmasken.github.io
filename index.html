@@ -42,9 +42,10 @@
           <div class="clk" style="font-family: 'Reggae one', cursive; color: burlywood; font-size: 18px;">
                You chose: <span id="clickedWhat3" style="color: crimson;"></span>
           </div>
-         <a id="nextbutton">Next &raquo;</a>
+         <a id="nextbutton" onclick="passString(myarray)">Next &raquo;</a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+    var myarray;
   myStorage = window.sessionStorage;
 let wheelNumber = 0;
 let canvas = document.getElementById("canvas");
@@ -66,7 +67,7 @@ function saveData(dataString){
 }else if(queue.getLength()>=3){
  queue.dequeue();
 	queue.enqueue(dataString);
-
+//myarray = queue.peek()+","+queue.secondItem()+","+queue.third();
 }else {
 	queue.enqueue(dataString);
 	
@@ -222,19 +223,15 @@ let theWheel = new Winwheel({
 
 });
 
-
+function passString(){
+    window.localStorage.setItem("firstimage", queue.peek());
+     window.localStorage.setItem("secondimage", queue.secondItem());
+      window.localStorage.setItem("thirdimage", queue.third());
+    window.location.href = 'feelings.html';
+   
+}
 
     </script>
-    
 
-    <script>
-  $(document).ready(function(e) {
-$( "#nextbutton" ).click(function() {
-alert(queue.peek()+","+queue.secondItem()+","+queue.third());
-});
-});  
-
-
-</script>
     </body>
 </html>

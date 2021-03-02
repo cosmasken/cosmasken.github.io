@@ -3,16 +3,7 @@
         <title>Emotion Wheel</title>
         <link rel="stylesheet" href="main.css" type="text/css" />         
          <script src="https://unpkg.com/konva@7.2.4/konva.min.js"></script>
-         <script type="text/javascript">
-
-// Get saved data from sessionStorage
-let data = localStorage.getItem('key');
-function getData() {
-
-    alert(data[1]);
-}
-
-</script>
+         
          <style>
          body{
          width: 300;
@@ -45,17 +36,20 @@ function getData() {
         
          </style>
     </head>
-    <body>
+    <body onload="pruebaString()">
     <h1 id ="header"style="margin-top: -30px;"><b>Click each feeling snd select where you feel it </b></h1> 
         <div class="main" align="center">
 <div id="hed" style="font-family: 'Reggae one', cursive; color: burlywood; font-size: 18px;">
-               Choose three feelings: <span id="spanhed" style="color: crimson;"></span>
+               You chose: <span id="spanhed" style="color: crimson;"></span>
           </div>
 <div class="toolbar">  
           <ul >
-           <img id="firstimage" src="img/Angesehen.png">
-            <img id="secondimage"src="img/Angesehen.png">
-             <img id="thirdimage"src="img/Angesehen.png">
+        
+          
+           <img id="firstimg" src="#"  alt="" />
+            <img id="secondimg" src="#" alt="" />
+             <img id="thirdimg" src="#"  alt="" />
+           
           </ul>
           </div>
           
@@ -79,15 +73,22 @@ function getData() {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/imageMapResizer.min.js"></script>
-    <!--script type="text/javascript" src="js/jquery.imagemapster.min.js"></script-->
-    <script>
-    
-$(document).ready(function(e) {
-$('map').imageMapResize();	
-$( "#firstimage" ).click(function() {
-$("#hed").text("Your text here");
-});
-});
+    <script type="text/javascript">
+
+function pruebaString(){
+   // document.getElementById("spanhed").innerHTML =
+        firstimageurl = window.localStorage.getItem("firstimage");
+         secondimageurl = window.localStorage.getItem("secondimage");
+          thirdimageurl = window.localStorage.getItem("thirdimage");
+        // loadImage("img/"+firstimageurl.toString()+".png", 50, 20, firstimg)
+     
+       //alert("img/"+firstimageurl.toString()+".png");
+       document.getElementById("firstimg").src ="img/"+firstimageurl.toString()+".png";
+       document.getElementById("secondimg").src ="img/"+secondimageurl.toString()+".png";
+       document.getElementById("thirdimg").src ="img/"+thirdimageurl.toString()+".png";
+}
+$('map').imageMapResize();
+
 
 </script>
     </body>
