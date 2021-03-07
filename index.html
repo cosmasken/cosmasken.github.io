@@ -1,16 +1,17 @@
 <html>
     <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
         <title>Emotion Wheel</title>
         <link rel="stylesheet" href="main.css" type="text/css" />
         <script type="text/javascript" src="js/Queue.src.js"></script>
+ <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="Winwheel.min.js"></script>
         <script type="text/javascript" src="Winwheel.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
     </head>
     <body>
+<style>
 <style>
 #nextbutton {
     display:none;
@@ -45,10 +46,10 @@
           <div class="clk" style="font-family: 'Reggae one', cursive; color: burlywood; font-size: 18px;">
                You chose: <span id="clickedWhat3" style="color: crimson;"></span>
           </div>
-         <a id="nextbutton" onclick="passString(myarray)">Next &raquo;</a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <a id = "nextbutton"  onclick="passString(myarray)">Next &raquo;</a>
+
     <script>
-    var myarray;
+  var myarray;
   myStorage = window.sessionStorage;
 let wheelNumber = 0;
 let canvas = document.getElementById("canvas");
@@ -91,9 +92,7 @@ canvas.onclick = function (e) {
   if (segmentImage.text == "Ausgeschlossen") {
    // window.location = "img/ausge.png";
    // theWheel.draw();
-   saveData(segmentImage.text);  
-    segmentImage.image= 'aqua';
-   theWheel.draw();          
+   saveData(segmentImage.text);            
 	} else if (segmentImage.text == "Beschaemt") {
       saveData(segmentImage.text);
   } else if (segmentImage.text == "Dankbar") {
@@ -127,7 +126,8 @@ canvas.onclick = function (e) {
   } else if (segmentImage.text == "Veraengstlich") {
     saveData(segmentImage.text);
   } else if (segmentImage.text == "Verletzlich") {
-   saveData(segmentImage.text);
+   
+saveData(segmentImage.text);
   }
 };
 // Also blank clicked what text.
@@ -226,7 +226,6 @@ let theWheel = new Winwheel({
   ],
 
 });
-
 function passString(){
     window.localStorage.setItem("firstimage", queue.peek());
      window.localStorage.setItem("secondimage", queue.secondItem());
@@ -234,6 +233,7 @@ function passString(){
     window.location.href = 'feelings.html';
    
 }
+
 
     </script>
     </body>
