@@ -83,32 +83,10 @@ background-color: rgba(0,0,0,0.0);
 <!-- Activate maphilight plugin -->
 <script type="text/javascript">
 $(function() {
-        $('.map').maphilight(
-{
-            fill: true,
-fillColor: 'ff0000',
-fillOpacity: 0.3,
-stroke: true,
-strokeColor: 'ff0000',
-strokeOpacity: 2,
-strokeWidth: 1,
-fade: true,
-alwaysOn: FALSE,
-neverOn: false,
-groupBy: false,
-wrapClass: true,
-// plenty of shadow:
-shadow: false,
-shadowX: 0,
-shadowY: 0,
-shadowRadius: 6,
-shadowColor: '000000',
-shadowOpacity: 0.8,
-shadowPosition: 'outside',
-shadowFrom: false
-        }
-);
-
+       $('.map').maphilight({
+            fillColor: '008800'
+        });
+       
        
     });
 </script> 
@@ -142,38 +120,10 @@ $('#secondimg').on({
 $('#thirdimg').on({
     'click': function(){
         $('#thirdimg').attr('src',"img/"+thirdimageurl.toString()+"1.png");
+    
     }
 });
 
-$(function() {
-  $('.area').click(function(e) {
-    e.preventDefault();
-    var data = $(this).data(maphilight) || {};
-    data.fillColor = 'FF0000'; // Sample color
-
-    // This sets the new data, and finally checks for areas with alwaysOn set
-    $(this).data('maphilight', data).trigger(alwaysOn.maphilight);
-  });
-});
-// $('#firstimg,#secondimg,#thirdimg').click(function(e) {
-     //       e.preventDefault();
-     //       $('#head').data('maphilight', data).trigger('alwaysOn.maphilight');
-     //   });
-
-//$('.map').maphilight();
-
-/*$("#firstimg").click(function(){
-alert("ttttttttttt");
-}
-);
-$("#secondimg").click(function(){
-alert("ttttttttttt");
-}
-);
-$("#thirdimg").click(function(){
-alert("ttttttttttt");
-}
-);*/
 </script>
     </body>
 </html>
