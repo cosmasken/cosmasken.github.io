@@ -92,6 +92,12 @@ $(function() {
 </script> 
     <script type="text/javascript" src="js/imageMapResizer.min.js"></script>    
    <script type="text/javascript">
+   firstButtonSelected = false;
+firstButtonFeeeling =null;
+secondButtonFeeling=null;
+thirdButtonFeeling=null;
+secondButtonSelected = false;
+thirdButtonSelected = false;
 
 function pruebaString(){
         firstimageurl = window.localStorage.getItem("firstimage");
@@ -110,17 +116,20 @@ $('map').imageMapResize();
 $('#firstimg').on({
     'click': function(){
         $('#firstimg').attr('src',"img/"+firstimageurl.toString()+"1.png");
+        firstButtonSelected =true;
     }
 });
 $('#secondimg').on({
     'click': function(){
         $('#secondimg').attr('src',"img/"+secondimageurl.toString()+"1.png");
+        secondButtonSelected = true;
     }
 });
 $('#thirdimg').on({
     'click': function(){
         $('#thirdimg').attr('src',"img/"+thirdimageurl.toString()+"1.png");
-    
+    thirdButtonSelected = true;
+    alert(thirdButtonSelected);
     }
 });
 
